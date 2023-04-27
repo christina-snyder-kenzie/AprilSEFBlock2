@@ -1,0 +1,29 @@
+ls (or dir for windows)
+	shows you the files in the folder where you are
+
+ls -l
+	Lists more info about the files
+
+ls -a
+	Lists all files, including the hidden ones
+
+ls -la
+	Lists lots of info about even the hidden files
+
+cd <folderName>
+	stands for change directory
+	Moves through your files
+
+cd ..
+	Moves UP a directory (or OUT)
+
+pwd
+	Present working directory
+	Shows you where you are
+
+mkdir <folderName>
+	stands for make directory
+	Make a new folder with the specified name
+
+clear
+	clean up the terminal and erase old text
