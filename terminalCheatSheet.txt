@@ -14,7 +14,7 @@ cd <folderName>
 	stands for change directory
 	Moves through your files
 
-cd ..
+cd .. 
 	Moves UP a directory (or OUT)
 
 pwd
@@ -27,3 +27,42 @@ mkdir <folderName>
 
 clear
 	clean up the terminal and erase old text
+
+
+-----------
+Getting your homework assignment steps:
+
+
+1. Accept the assignment on github
+2. Find that SSH Link (it's the code button)
+3. In terminal: navigate to your kenzie folder
+	(cd kenzie)
+	You may have to cd ~ first (maybe)
+
+4. git clone <ssh link>
+
+5. SIDESTEP into IntelliJ
+	Complete the assignment
+
+6. Back in the terminal: do a git status
+	THis should be red
+
+7. git add .
+
+8. git status
+	This should be green now
+
+9. git commit -m "Your message here"
+
+10. git push
+
+
+
+
+
+
+
+
+
+
+
