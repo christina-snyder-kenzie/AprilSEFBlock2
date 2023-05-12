@@ -17,9 +17,50 @@ public class GuessingGame {
         System.out.println("Welcome to my guessing game!!");
         boolean hasRightAnswer = false;
         Scanner scan = new Scanner(System.in);
+        System.out.println("You get to decide your range of numbers");
+        System.out.println("Enter the smallest number you'd like to guess");
+        int small = Integer.parseInt(scan.nextLine());
+        System.out.println("Enter the biggest number you'd like to guess");
+        int big = Integer.parseInt(scan.nextLine());
         //TODO: Make the number random
-        int secretNumber = 7;
-        System.out.println("Enter a number between 1 and 10");
+        int secretNumber = (int) (Math.random() * (big - small + 1) + small);
+        /*
+            random numbers
+            Math.random() -> generates a double on the range [0, 1)
+                0 is included
+                1 is excluded
+                    [0, .9999999]
+
+                I want numbers on the range, [25, 35)
+
+                [a, b)
+                    Math.random() * (b - a) + a;
+                [25, 35) (exclusive)
+                    Math.random() * (35 - 25) + 25;
+                    [25, 34.999999] (inclusive)
+
+                    (int) ( Math.random() * (35 - 25) + 25 ) ;
+                        [25, 34] (we lose out on the 35)
+
+                int version = (int) (doubleNumber);
+                    forces truncation
+
+
+                when we want ints, on the range, [a, b] inclusive!
+                    New formula!
+                (int) (Math.random() * (b - a + 1) + a) ;
+
+                [25, 35]
+                    (int) (Math.random() * (35 - 25 + 1) + 25);
+
+                        (int) (Math.random() * 11 + 25);
+
+
+
+
+         */
+
+        System.out.println("Enter a number between " + small + " and " + big);
         int guessNumber = Integer.parseInt(scan.nextLine()); //scan.nextInt()
         if (guessNumber == secretNumber){
             System.out.println("WOW You got it on the first try!");
@@ -32,7 +73,7 @@ public class GuessingGame {
 
         //second guess: We only want it if they DONT have the right answer
         if ( !hasRightAnswer ){ //same as: hasRightAnswer == false
-            System.out.println("Second try: Enter a number between 1 and 10");
+            System.out.println("Second try: Enter a number between " + small + " and " + big);
             guessNumber = Integer.parseInt(scan.nextLine());
             if (guessNumber == secretNumber){
                 System.out.println("You got it! Second try- not bad.");
@@ -55,7 +96,7 @@ public class GuessingGame {
                     System.out.println("The secret number is odd!");
                 }
             }
-            System.out.println("Last try! Enter a number between 1 and 10");
+            System.out.println("Last try! Enter a number between " + small + " and " + big);
             //TODO: Tell them if it's odd or even
             guessNumber = Integer.parseInt(scan.nextLine());
             if (guessNumber == secretNumber){
