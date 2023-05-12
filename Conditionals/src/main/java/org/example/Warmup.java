@@ -2,6 +2,7 @@ package org.example;
 
 public class Warmup {
     public static void main(String[] args) {
+        //TODO: MAke an example
         //Variable is a way to store/remember data in code
         //dataType varName = value;
             //dataTypes: int, double, float, boolean, char, (long, short, byte)
