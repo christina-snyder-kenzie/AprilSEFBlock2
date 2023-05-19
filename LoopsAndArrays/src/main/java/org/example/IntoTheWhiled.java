@@ -19,7 +19,7 @@ public class IntoTheWhiled {
         /*
             While loops (Iterative statement) (Iteration)
                 1. Initialize the variable (our starting point)
-                2. while (condition) {
+                2. while (condition) { (like our stopping point)
                     3. Do stuff
                     4. Incrementation / update
                 }
@@ -73,6 +73,14 @@ public class IntoTheWhiled {
         System.out.println("After 31 days, you have " + numPennies + " pennies");
         System.out.println("After 31 days, you have $" + numPennies / 100.0 + " dollars");
 
+
+        //print out multiples of 5 starting at 100 and stopping at 5
+            //100, 95, 90, ... 15, 10, 5
+        //print out powers of 2 starting at 128 and doing down to 1
+            //128, 64, 32, 16, 8, 4, 2, 1
+            //HINT: 2 ^ 7 == 128
+        //print out even numbers between 0 and 99
+            //0, 2, 4, 6... 96, 98
 
     } //ends the main method
 } //ends the class/file
