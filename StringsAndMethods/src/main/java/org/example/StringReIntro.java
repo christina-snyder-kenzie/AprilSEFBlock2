@@ -1,5 +1,6 @@
 package org.example;
 
+import java.lang.reflect.Method;
 import java.util.Arrays;
 
 public class StringReIntro {
@@ -156,6 +157,8 @@ public class StringReIntro {
             System.out.println(number % 10);
             number = number / 10;
         }
+
+        System.out.println(MethodIntro.detSign(-17));
 
     }
 }

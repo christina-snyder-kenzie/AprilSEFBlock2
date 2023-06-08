@@ -1,0 +1,114 @@
+= vs ==
+
+= (assignment operator) (int x = 7; we assign 7 to x)
+
+== (comparison operator) (results in a boolean)
+	x == 7 (true or false depending on x)
+
+.equals (for strings (or any other object))
+
+
+conditional statements
+
+if (boolean condition)
+
+--------------------------------------
+char[] random = new char[25];
+loop	
+	random[i] = (char) (Math.random() * ('z' - 'a') + 'a')
+
+String PASSWORD = new String(random);
+
+
+
+
+
+//given a sentence, give me the letters of the sentence but with no pizza
+//I love pizza and candy
+// {i, l, o, v, e,  , a, n, d, , }
+
+str = str.replace(   "pizza"  ,   ""   );
+
+char[] letters = str.toCharArray();
+
+
+
+.trim()
+"  a b c    "
+"a b c"
+
+
+
+
+//print the index of the last word in your new array (of words)
+
+length = 10 (i can go to 9)
+length = 27 (i can go to 26)
+
+length = length (i can go to length - 1)
+for (int i = 0; i < arr.length; i++){
+	if (i == arr.length - 1){
+		sout(i)
+	}
+	
+}
+
+
+the last index IS length - 1
+
+
+System.out.println(index2.length - 1);
+
+
+int[] numbers = {7, 5, 1, 3, 7, 2, 7};
+
+for (int i = 0; i < numbers.length; i++){
+	int currNumber = numbers[i];
+	if (currNumber == 7){
+		counter++;
+		sout(currNumber);
+		basket += currNumber;
+	}
+}
+
+
+char[] letters = {stuff};
+for (int i = 0; i < letters.length; i++){
+	char currLetter = letters[i];
+	if (currLetter == 'a'){
+		counter++?
+	}
+}
+
+
+
+Collecting -> words that start with 'b'
+
+	Count
+		init counter
+		loop	
+			if the word starts with b
+				counter++
+
+	Make that new array for the good stuff
+		how big is that array? (count!!)
+
+	Fill it up with words that start with b
+		(special index)
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
