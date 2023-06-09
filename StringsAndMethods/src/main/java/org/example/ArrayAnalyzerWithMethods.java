@@ -49,73 +49,92 @@ public class ArrayAnalyzerWithMethods {
     }
 
 //    A new array containing all even numbers in the array
-    public static int[] findEvenNumbers(int[] numbers) {
+//    public static int[] findEvenNumbers(int[] numbers) {
+//        int counter = 0;
+//        for(int number : numbers) {
+//            if (number % 2 == 0) {
+//                counter += 1;
+//            }
+//        }
+//
+//        int[] evenNumbers = new int[counter];
+//        int evenNumbersIndex = 0;
+//        for(int number : numbers) {
+//            if (number % 2 == 0) {
+//                evenNumbers[evenNumbersIndex++] = number;
+//            }
+//        }
+//
+//        return evenNumbers;
+//    }
+////    A new array containing all odd numbers in the array
+//    public static int[] findOddNumbers(int[] numbers) {
+//        int counter = 0;
+//        for(int number : numbers) {
+//            if (number % 2 != 0) {
+//                counter += 1;
+//            }
+//        }
+//
+//        int[] oddNumbers = new int[counter];
+//        int oddNumbersIndex = 0;
+//        for(int number : numbers) {
+//            if (number % 2 != 0) {
+//                oddNumbers[oddNumbersIndex] = number;
+//                oddNumbersIndex += 1;
+//            }
+//        }
+//
+//        return oddNumbers;
+//    }
+//
+//
+////    A new array containing all numbers divisible by 8 in the array
+//    public static int[] findNumbersDivisbleBy8(int[] numbers) {
+//        int counter = findOccurrences(numbers, 8, true);
+//
+//        int[] numbersDivisbleBy8 = new int[counter];
+//        int index = 0;
+//        for (int number : numbers) {
+//            if (number % 8 == 0) {
+//                numbersDivisbleBy8[index] = number;
+//                index++;
+//            }
+//        }
+//
+//        return numbersDivisbleBy8;
+//    }
+
+    public static int findOccurrences(int[] numbers, int divisor, boolean wantDivisible) {
         int counter = 0;
         for(int number : numbers) {
-            if (number % 2 == 0) {
+            if (wantDivisible && number % divisor == 0) {  // checking if we WANT it to be divisible and if it actually IS divisible
                 counter += 1;
-            }
-        }
-
-        int[] evenNumbers = new int[counter];
-        int evenNumbersIndex = 0;
-        for(int number : numbers) {
-            if (number % 2 == 0) {
-                evenNumbers[evenNumbersIndex++] = number;
-            }
-        }
-
-        return evenNumbers;
-    }
-//    A new array containing all odd numbers in the array
-    public static int[] findOddNumbers(int[] numbers) {
-        int counter = 0;
-        for(int number : numbers) {
-            if (number % 2 != 0) {
-                counter += 1;
-            }
-        }
-
-        int[] oddNumbers = new int[counter];
-        int oddNumbersIndex = 0;
-        for(int number : numbers) {
-            if (number % 2 != 0) {
-                oddNumbers[oddNumbersIndex] = number;
-                oddNumbersIndex += 1;
-            }
-        }
-
-        return oddNumbers;
-    }
-
-    public static int findOccurrences(int[] numbers, int divisor) {
-        int counter = 0;
-        for(int number : numbers) {
-            if (number % divisor == 0) {
-                counter += 1;
+            } else if (!wantDivisible && number % divisor != 0) {
+                counter++;
             }
         }
 
         return counter;
     }
-//    A new array containing all numbers divisible by 8 in the array
-    public static int[] findNumbersDivisbleBy8(int[] numbers) {
-        int counter = findOccurrences(numbers, 8);
 
-        int[] numbersDivisbleBy8 = new int[counter];
-        int index = 0;
-        for (int number : numbers) {
-            if (number % 8 == 0) {
-                numbersDivisbleBy8[index] = number;
-                index++;
+    public static int[] findDivisibleNumbers(int[] numbers, int divisor, boolean wantDivisible) {
+        int count = findOccurrences(numbers, divisor, wantDivisible);
+
+        int[] result = new int[count];
+        int resultIndex = 0;
+        for(int number : numbers) {
+            // checking if we WANT it to be divisible and if it actually IS divisible
+            if (wantDivisible && number % divisor == 0) {
+                result[resultIndex] = number;
+                resultIndex++;
+            } else if (!wantDivisible && number % divisor != 0) {
+                result[resultIndex] = number;
+                resultIndex++;
             }
         }
 
-        return numbersDivisbleBy8;
-    }
-
-    public static int[] findDivisbleNumbers(int[] numbers, int divisor, boolean isDivisble) {
-
+        return result;
     }
 
     public static void arrayAnalyzer(int[] numbers) { // This curly brace
@@ -134,21 +153,51 @@ public class ArrayAnalyzerWithMethods {
         double average = findAverage(numbers);
         System.out.println("The average is: " + average);
 
-        int[] evenNumbers = findEvenNumbers(numbers);
+        //int[] evenNumbers = findEvenNumbers(numbers);
+        int[] evenNumbers = findDivisibleNumbers(numbers, 2, true);
         System.out.println("The even numbers are: " + Arrays.toString(evenNumbers));
 
         // i'm done with variables
-        System.out.println("The odd numbers are: " + Arrays.toString(findOddNumbers(numbers)));
+        System.out.println("The odd numbers are: " + Arrays.toString(findDivisibleNumbers(numbers, 2, false)));
 
         // okay i'm back to variables...
-        int[] numbersDivisbleBy8 = findNumbersDivisbleBy8(numbers);
+        // int[] numbersDivisbleBy8 = findNumbersDivisbleBy8(numbers);
+        int[] numbersDivisbleBy8 = findDivisibleNumbers(numbers, 8, true);
         System.out.println("The numbers divisble by 8 are: " + Arrays.toString(numbersDivisbleBy8));
 
 
 
+
+
     } // This curly brace
+
+
+    //--------------------------------
+    // String method examples!!!
+    // create a method which will accept a string and return an array of letters/characters/whatever
+    public static char[] getCharacterArray(String str) {
+//        char[] charArray = str.toCharArray();
+//
+//        return charArray;
+        return str.toCharArray();
+    }
+
+    public static String[] getStringArray(String str) {
+        String[] stringArray = str.split("");
+        return stringArray;
+    }
+
     public static void main(String[] args) {
         int[] data = new int[]{ 469, 755, 244, 245, 758, 450, 302, 20, 712, 71, 456, 21, 398, 339, 882, 848, 179, 535, 940, 472 };
         arrayAnalyzer(data);
+
+
+        // String examples
+        String phrase = "I'm gonna wreck it";
+        char[] charactersFromPhrase = getCharacterArray(phrase);
+        System.out.println(Arrays.toString(charactersFromPhrase));
+
+        String[] stringCharactersFromPhrase = getStringArray(phrase);
+        System.out.println(Arrays.toString(stringCharactersFromPhrase));
     }
 }
