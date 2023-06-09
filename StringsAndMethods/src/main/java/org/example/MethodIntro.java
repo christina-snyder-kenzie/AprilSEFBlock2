@@ -33,7 +33,70 @@ public class MethodIntro {
         System.out.println(countLs(sentence));
         System.out.println(countAnyLetter(sentence, 'l'));
         System.out.println(countAnyLetter(sentence, "l"));
+
+        // --------------------------------------
+        System.out.println("--------------------");
+
+        int grade1 = 50;
+        int grade2 = 35;
+
+        double rating1 = 5.0;
+        double rating2 = 3.0;
+
+        int[] grades = {grade1, grade2, 45, 38, 99};
+        int curve = 1;
+
+        int totalGrade = calculateSum(grade1, grade2);
+        System.out.println("The total grade is: " + totalGrade);
+
+        double totalRating = calculateSum(rating1, rating2);
+        System.out.println("The total rating is: " + totalRating);
+
+        int gradesTotal = calculateSum(grades);
+        System.out.println("The grades total is: " + gradesTotal);
+
+        int gradesTotalWithCurve = calculateSum(grades, curve);
+        System.out.println("The grades total with a " + curve + " point curve is: " + gradesTotalWithCurve);
+
     } //ends my main method
+
+    // 6-9
+    // -------------------------------------------
+
+
+    // Create a method which will accept two numbers and return the sum
+    public static int calculateSum(int a, int b) {
+        int sum = a + b;
+//        System.out.println(sum);
+        return sum;
+        //return a + b;
+    }
+
+    //OVERLOADING!!!!
+    // methods can be defined with the same but with different inputs and return types
+    public static double calculateSum(double a, double b) {
+        double sum = a + b;
+
+        return sum;
+    }
+
+    public static int calculateSum(int[] array) {
+        int sum = 0;
+        for (int number : array) {
+            sum += number;
+        }
+        return sum;
+
+    }
+
+    public static int calculateSum(int[] array, int curve) {
+        int sum = 0;
+        for (int number : array) {
+            sum += number + curve;
+        }
+        return sum;
+    }
+
 
     //GOAL: counting ANY letter
     //inputs -> String to look through
@@ -157,5 +220,12 @@ public class MethodIntro {
             return "Zero";
         }
     }
+
+
+
+
+
+
+
 
 } //ends my class/file
