@@ -116,6 +116,7 @@ public class StringReIntro {
 
                 //String letter;
                     //if (letter.equals("o")) { }
+                    //if (letter.equalsIgnoreCase("o")) { }
 
         //initialize a counter
         int counter = 0;
