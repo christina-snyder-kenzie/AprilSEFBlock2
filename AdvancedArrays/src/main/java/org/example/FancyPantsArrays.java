@@ -37,5 +37,5 @@ public class FancyPantsArrays {
         int[] rotated = ArrayUtils.add(withoutFirst, saved);
         return rotated;
     }
-    
+
 }
