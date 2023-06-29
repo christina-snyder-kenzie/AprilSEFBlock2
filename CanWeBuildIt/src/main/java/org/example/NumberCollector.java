@@ -65,11 +65,23 @@ public class NumberCollector {
             }
         }
         System.out.println("You entered: " + numberBasket);
+        System.out.println("Your average is: " + calcAverage(numberBasket));
+        System.out.println(7 / 0.0);
+        System.out.println(7.0 / 0);
+        //System.out.println(7 / 0);
     }
-    
+
+    //we are adding all the numbers together and then dividing by num of nums
     public static double calcAverage(ArrayList<Integer> list){
         //account for zero length!
-        return 0.0;
+        double sum = 0;
+        for (int i = 0; i < list.size(); i++){
+            int currentNumber = list.get(i);
+            sum += currentNumber;
+        }
+
+        double average = sum / list.size();
+        return average;
     }
 
 }
