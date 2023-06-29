@@ -1,0 +1,25 @@
+public class Application {
+	
+	public static void main(String[] args){
+		returnType answer = methodName(inputs);
+		sout(answer);
+
+		int result = add(2, 3);
+	}
+
+	public static int add(int a, int b){
+		return a + b;
+	}
+
+	public static returnType methodName(parameters){
+		do stuff
+		return something;
+	}
+
+	public static retType2 method2(otherParams){
+		returnType answer = methodName(someInputs);
+		do soemthing with answer
+		return something else;
+	}
+
+}
