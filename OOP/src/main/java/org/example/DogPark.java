@@ -55,7 +55,29 @@ public class DogPark {
 
         System.out.println(bruce.getAge("1234"));
         System.out.println(bruce.getAge("1111"));
+
+
+
+
+
+        // Milestone recap
+        //String inputString = "Hello! Welcome to Kenzie";
+
+        String name = "Bulbasaur";
+
+
     }
+
+//    public static int countLetter(String string, String character) {
+//        String[] characters = string.split("");
+//        int count = 0;
+//        for (String currentCharacter : characters) {
+//            // is the currentCharacter equal to the character (ignoring the case)
+//            // if so, increase count by 1
+//        }
+//
+//        // returning count
+//    }
 }
 
 

@@ -17,7 +17,7 @@ public class Dog {
 
     //constructor
         //the job of a constructor is to initialize instance variables
-    //very specfic synatx:
+    //very specific syntax:
         //public ClassName(parameters) { assign variables }
 
     public Dog(int ageParam, double weightParam, boolean spotsParam){
