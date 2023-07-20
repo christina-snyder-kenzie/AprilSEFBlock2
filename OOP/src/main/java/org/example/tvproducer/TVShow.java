@@ -22,14 +22,20 @@ public class TVShow {
 
     @Override
     public String toString() {
-        return "TVShow\n{" +
-                "title='" + title + "'" +
-                ", genre='" + genre + '\'' +
-                ", summary='" + summary + '\'' +
-                ", rating='" + rating + '\'' +
-                ", episodes=" + episodes +
-                ", cast=" + cast +
-                '}';
+        String toReturn =  "TVShow" +
+                "\ntitle='" + title + "'" +
+                "\ngenre='" + genre + '\'' +
+                "\nsummary='" + summary + '\'' +
+                "\nrating='" + rating + '\'' +
+                "\nepisodes=";
+        for (Episode e : episodes){
+        toReturn += "\n\t" + e;
+        }
+        toReturn += "\ncast=" ;
+        for (CastMember c : cast){
+            toReturn += "\n\t" + c;
+        }
+        return toReturn;
     }
 
     public String getTitle() {
