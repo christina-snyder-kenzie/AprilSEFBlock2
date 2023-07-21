@@ -1,0 +1,21 @@
+Car Object
+	numPassengers
+	VIN (alpha numeric)
+	price
+
+	model
+	make
+	color
+	numDoors
+Dealership Object
+	ArrayList<Car> lot/inventory
+
+	receive(Car)
+
+	getCheapCars(double threshold)
+	getCarWithPassengerCount(int numFolks)
+
+	sell(VIN, double)
+	sell(VIN, Car)
+	sell(VIN, Car, double)
+		should this remove the car? probs.

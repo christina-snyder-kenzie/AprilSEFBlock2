@@ -1,0 +1,18 @@
+A car dealership needs some new software. Here are their requirements:
+
+1. The dealership needs to know and see all of the cars in the lot
+	a. Each car should have a unique VIN number
+
+2. The dealership should be able to receive new cars to the lot
+
+3. The dealership can list cars with the following qualities:
+	a. All cars with worth below a target price
+	b. All cars with a target number of passengers
+
+4. The dealership can sell a car by VIN number, providing the customer with the car.
+		In addition to VIN Number, they will need payment. 
+		Options for payment include:
+			a. Enough money
+			b. A trade in car of equal or higher worth
+			c. A combination of a car and money whose total worth is enough
+		If a customer tries to buy a car but does not have enough payment, the sell should fail.

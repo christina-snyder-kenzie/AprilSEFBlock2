@@ -2,6 +2,7 @@ package org.example;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Recipe {
     //ingredients -> a collection of Ingredients
@@ -131,7 +132,64 @@ public class Recipe {
         return sb.toString();
     }
 
+    //update an ingredient amount (1 -> 2)
 
+    //update an ingredient unit (tsp -> TBSP)
+
+    //update methods
+        //new amount/unit
+        //existing ingredient name
+
+    //GOAL: find an ingredient with a particular name
+    public boolean updateIngredientAmount(String existingName, double newAmount){
+        for (int i = 0; i < ingrList.size(); i++){
+            Ingredient currIngr = ingrList.get(i);
+            //if the current ingredient has the same name as the parameter
+            if (currIngr.getName().equals(existingName)){
+                currIngr.setAmount(newAmount);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean updateIngredientUnit(String existingName, String newUnit){
+        for (Ingredient currIngr : ingrList){
+            if (currIngr.getName().equals(existingName)){
+                currIngr.setUnit(newUnit);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    //scaleIt by some factor (x2)
+        //update all ingredient amounts
+            //amount *= factor
+    //step1:
+        //make a copy
+            //create a new recipe with all the same data
+
+            //for ingredients: loop over the existing and add them to the copy
+    //step2:
+        //update our ingredient amounts
+    public Recipe scaleIt(double factor){
+        Recipe copy = new Recipe(this.name + " x " + factor, Arrays.copyOf(supplies, supplies.length), this.servingSize * factor, new ArrayList<String>(steps), this.cookTime, new ArrayList<Ingredient>());
+
+        for (Ingredient currIngr : this.ingrList){
+            double factoredAmount = currIngr.getAmount() * factor;
+            copy.addIngredient(factoredAmount, currIngr.getUnit(), currIngr.getName());
+        }
+        return copy;
+    }
+
+    //addIngredient
+    //addIngredient(Ingredient ingr) { ingrList.add(ingr); }
+    //addIngredient(amount, unit, namt) { Ingredient newIngr = new Ingredient(amount, unit, name); }
+    public void addIngredient(double amount, String unit, String name){
+        Ingredient toAdd = new Ingredient(amount, unit, name);
+        ingrList.add(toAdd);
+    }
 
 
 }

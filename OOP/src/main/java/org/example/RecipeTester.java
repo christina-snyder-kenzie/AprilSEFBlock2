@@ -29,6 +29,13 @@ public class RecipeTester {
         System.out.println(r1.getIngrList());
         System.out.println(r1);
 
+        r1.updateIngredientAmount("salt", 2);
+        r1.updateIngredientUnit("salt", "TBSP");
+        System.out.println(r1);
+
+        Recipe doubleBatch = r1.scaleIt(2);
+        System.out.println(doubleBatch);
+
 
     }
 }
