@@ -69,6 +69,13 @@ public class Bank {
         allAccounts.add(firstSavings);
         allAccounts.add(anotherOtherAccount);
 
+        System.out.println("-----------------");
+
+        BankAccount newBankAccount = new BankAccount();
+        System.out.println(newBankAccount);
+        newBankAccount.closeAccount();
+        System.out.println(newBankAccount);
+
 
     }
 }

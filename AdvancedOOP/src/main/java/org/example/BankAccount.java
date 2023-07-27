@@ -4,6 +4,7 @@ public class BankAccount {
     // properties/instance variables
       // balance
       // signUpBonus
+      // enum -> status
 
     // access modifiers!
       // private - can only access something within the class its defined (must use getters and setters in this case)
@@ -12,6 +13,7 @@ public class BankAccount {
 
     protected double balance;
     protected double signUpBonus;
+    protected Status status;
 
     // methods
     // OVERLOADED
@@ -19,11 +21,13 @@ public class BankAccount {
     public BankAccount() {
         this.signUpBonus = 200;
         this.balance = this.signUpBonus;
+        this.status = Status.OPEN;
     }
 
     public BankAccount(double balance) {
         this.signUpBonus = 200;
         this.balance = this.signUpBonus + balance;
+        this.status = Status.OPEN;
     }
 
       // getters and setters
@@ -43,6 +47,14 @@ public class BankAccount {
         this.signUpBonus = signUpBonus;
     }
 
+    public Status getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     // deposit
     public double deposit(double amount) {
         if (amount > 0) {
@@ -55,12 +67,27 @@ public class BankAccount {
 
     // withdraw
     public double withdraw(double amount) {
-        if (amount > 0 && this.balance >= amount) {
+//        if (amount > 0 && this.balance >= amount) {
+//            this.balance -= amount;
+//            System.out.println("Successfully withdrawn $" + amount + ". New balance is: $" + this.balance);
+//        }
+        // what if we want to allow the Account to overdraft?
+        if (amount > 0) {
             this.balance -= amount;
-            System.out.println("Successfully withdrawn $" + amount + ". New balance is: $" + this.balance);
+            System.out.println("Successfully withdrawn $" + String.format("%.2f", amount) + ". New balance is: $" + String.format("%.2f", this.balance));
+
+            if (this.balance < 0) {
+                this.status = Status.OVERDRAWN;
+            }
         }
 
         return this.balance;
+    }
+
+    // close account :(
+    public void closeAccount() {
+        this.withdraw(this.balance);
+        this.status = Status.CLOSED;
     }
 
     // transfer
@@ -79,6 +106,6 @@ public class BankAccount {
     // toString
     // POLYMORPHISM!!!
     public String toString() {
-        return "Balance: $" + String.format("%.2f", this.balance);
+        return "Balance: $" + String.format("%.2f", this.balance) + "\nStatus: " + this.status;
     }
 }
