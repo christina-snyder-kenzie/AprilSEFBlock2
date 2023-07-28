@@ -10,5 +10,13 @@ public class Main {
         // Animal vs Reptile
           // Not all animals are reptiles, but all reptiles are animals
           // IS-A relationship
+
+
+        Employee bezos = new Employee("Jeff");
+        System.out.println(bezos);
+
+        Employee gates = new Employee("Bill", Department.OPS, Shift.RT);
+        System.out.println(gates);
+
     }
 }
